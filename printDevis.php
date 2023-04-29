@@ -118,39 +118,39 @@ $this->Line(0,48,210,48);
       $this->SetX(-60);
       $this->Cell(50,7,"DEVIS EN EURO");
       
-          //Display Table headings
-          $this->SetY(95);
-          $this->SetX(10);
-          $this->SetFont('Arial','B',12);
-          $this->Cell(80,9,"Produits",1,0);
-          $this->Cell(15,9,"Unite",1,0,"C");
-          $this->Cell(40,9,"Prix",1,0,"C");
-          $this->Cell(20,9,"QTY",1,0,"C");
-          $this->Cell(40,9,"TOTAL",1,1,"C");
-          $this->SetFont('Arial','',12);
-          
-          //Display table product rows
-          foreach($products_info as $row){
-            $this->Cell(80,9,$row["name"],"LR",0);
-            $this->Cell(15,9,$row["metre"],"R",0,"C"); // Nouvelle colonne "Unité"
-            $this->Cell(40,9,$row["price"],"R",0,"R");
-            $this->Cell(20,9,$row["qty"],"R",0,"C");
-            $this->Cell(40,9,$row["total"],"R",1,"R");
-          }
-          //Display table empty rows
-          for($i=0;$i<12-count($products_info);$i++)
-          {
-            $this->Cell(80,9,"","LR",0);
-            $this->Cell(15,9,"","R",0,"R");
-            $this->Cell(40,9,"","R",0,"R");
-            $this->Cell(20,9,"","R",0,"C");
-            $this->Cell(40,9,"","R",1,"R");
-          }
-          //Display table total row
-          $this->SetFont('Arial','B',12);
-          $this->Cell(155,9,"TOTAL",1,0,"R");
-          $this->Cell(40,9,$info["total_amt"].'',1,1,"R");
-          
+         //Display Table headings
+      $this->SetY(95);
+      $this->SetX(10);
+      $this->SetFont('Arial','B',12);
+      $this->Cell(115,9,"D\xE9signation",1,0);
+      $this->Cell(15,9,"Unite",1,0,"C");
+      $this->Cell(20,9,"PU",1,0,"C");
+      $this->Cell(20,9,"QTE",1,0,"C");
+      $this->Cell(25,9,"TOTAL",1,1,"C");
+      $this->SetFont('Arial','',12);
+      
+      //Display table product rows
+      foreach($products_info as $row){
+        $this->Cell(115,9,$row["name"],"LR",0);
+        $this->Cell(15,9,$row["metre"],"R",0,"C"); // Nouvelle colonne "Unité"
+        $this->Cell(20,9,$row["price"],"R",0,"R");
+        $this->Cell(20,9,$row["qty"],"R",0,"C");
+        $this->Cell(25,9,$row["total"],"R",1,"R");
+      }
+      //Display table empty rows
+      for($i=0;$i<12-count($products_info);$i++)
+      {
+        $this->Cell(115,9,"","LR",0);
+        $this->Cell(15,9,"","R",0,"R");
+        $this->Cell(20,9,"","R",0,"R");
+        $this->Cell(20,9,"","R",0,"C");
+        $this->Cell(25,9,"","R",1,"R");
+      }
+      //Display table total row
+      $this->SetFont('Arial','B',12);
+      $this->Cell(170,9,"TOTAL",1,0,"R");
+      $this->Cell(25,9,$info["total_amt"].'',1,1,"R");
+      
       
     }
     function Footer(){
