@@ -1,6 +1,7 @@
 <?php require "config.php";
 
-require_once 'auth.php';?>
+
+?>
 <html>
   <head>
   <title>COBAN PLAQUISTE</title>

@@ -1,6 +1,5 @@
 <?php
 require_once 'config.php';
-require_once 'auth.php';
 
 // Vérifier si le formulaire de suppression a été soumis
 if (isset($_POST['delete_sid'])) {
@@ -45,7 +44,6 @@ $result = mysqli_query($con, $sql);
       <div class="navbar-nav mx-lg-auto">
         <a class="nav-item nav-link" href="dashboardDevis.php">Devis</a>
         <a class="nav-item nav-link" href="index.php">Facture</a>
-        <a class="nav-item nav-link" href="logout.php">Déconnexion</a>
       </div>
     </div>
      <!-- Search box. -->
